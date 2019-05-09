@@ -6,7 +6,7 @@
 /*   By: ggerhold <ggerhold@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/09 19:35:42 by ggerhold          #+#    #+#             */
-/*   Updated: 2019/05/09 19:40:11 by ggerhold         ###   ########.fr       */
+/*   Updated: 2019/05/09 20:35:50 by ggerhold         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 int     main(void)
 {
-    ft_printf("%s", "printf is working?");
+    ft_printf("%s", "printf is working?\n");
     return (0);
 }
