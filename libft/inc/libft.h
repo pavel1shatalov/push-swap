@@ -6,7 +6,7 @@
 /*   By: ggerhold <ggerhold@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/04 18:57:01 by ggerhold          #+#    #+#             */
-/*   Updated: 2019/05/04 18:57:04 by ggerhold         ###   ########.fr       */
+/*   Updated: 2019/05/10 22:29:39 by ggerhold         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,6 +109,7 @@ int					ft_nbrlen_base(unsigned long long int nbr, int base);
 char				*ft_chjoinstr(char c, char *str);
 char				*ft_strjoinnch(char *str, char c, int n);
 char				*ft_nchjoinstr(char *str, char c, int n);
+void				ft_memndel(void *ap, size_t n);
 
 # define BUFF_SIZE 32
 

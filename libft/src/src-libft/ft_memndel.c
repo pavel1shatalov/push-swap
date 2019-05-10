@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.h                                          :+:      :+:    :+:   */
+/*   ft_memndel.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggerhold <ggerhold@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/09 19:37:26 by ggerhold          #+#    #+#             */
-/*   Updated: 2019/05/10 23:22:33 by ggerhold         ###   ########.fr       */
+/*   Created: 2019/05/10 22:20:25 by ggerhold          #+#    #+#             */
+/*   Updated: 2019/05/10 22:31:53 by ggerhold         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHECKER_H
-# define CHECKER_H
+#include "libft.h"
 
-# include "../libft/inc/libft.h"
-# include "../libft/inc/ft_printf.h"
-
-void    ft_printl(t_list *lst, char num);
-void    ft_swap(t_list **lst);
-void    ft_rotate(t_list **lst);
-void    ft_reverse_rotate(t_list **lst);
-void    ft_push(t_list **dst, t_list **src);
-
-#endif
+void	ft_memndel(void *ap, size_t n)
+{
+	if (n)
+		ft_memdel(&ap);
+}

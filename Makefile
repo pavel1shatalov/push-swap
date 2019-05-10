@@ -6,7 +6,7 @@
 #    By: ggerhold <ggerhold@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/09 18:04:07 by ggerhold          #+#    #+#              #
-#    Updated: 2019/05/09 20:29:42 by ggerhold         ###   ########.fr        #
+#    Updated: 2019/05/10 19:46:48 by ggerhold         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,8 @@ INC_DIR = ./inc
 OBJ_DIR_CHECKER = ./obj-checker
 OBJ_DIR_PUSH_SWAP = ./obj-push_swap
 
-SRC_CHECKER		=	main.c
+SRC_CHECKER		=	main.c \
+					lists.c
 
 SRC_PUSH_SWAP	=	main.c
 

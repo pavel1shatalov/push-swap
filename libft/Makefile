@@ -6,7 +6,7 @@
 #    By: ggerhold <ggerhold@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/02 15:48:04 by ggerhold          #+#    #+#              #
-#    Updated: 2019/05/09 20:32:00 by ggerhold         ###   ########.fr        #
+#    Updated: 2019/05/10 22:30:09 by ggerhold         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -102,6 +102,7 @@ SRC_LIBFT	=	ft_strlen.c \
 				ft_chjoinstr.c \
 				ft_strjoinnch.c \
 				ft_nchjoinstr.c \
+				ft_memndel.c
 
 SRC_FT_PRINTF = ft_printf.c \
 				token_processing.c \
