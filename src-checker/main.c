@@ -6,7 +6,7 @@
 /*   By: ggerhold <ggerhold@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/09 19:33:49 by ggerhold          #+#    #+#             */
-/*   Updated: 2019/05/12 01:58:51 by ggerhold         ###   ########.fr       */
+/*   Updated: 2019/05/12 02:32:02 by ggerhold         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,20 @@ void    read_instructions(t_list **stack1, t_list **stack2)
     }
 }
 
+void    ft_check(t_list *lst)
+{
+    while (lst && lst->next)
+    {
+        if (*(int *)lst->content > *(int *)lst->next->content)
+        {
+            ft_printf("KO\n");
+            return ;
+        }
+        lst = lst->next;
+    }
+    ft_printf("OK\n");
+}
+
 int     main(int ac, char **av)
 {
     t_list  *stack1;
@@ -105,5 +119,8 @@ int     main(int ac, char **av)
     ft_printl(stack1, 1);
     ft_printf("_-_\n");
     ft_printl(stack2, 2);
+
+    // Check if it's sorted
+    ft_check(stack1);
     return (0);
 }

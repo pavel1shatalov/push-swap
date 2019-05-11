@@ -6,7 +6,7 @@
 /*   By: ggerhold <ggerhold@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/10 19:28:03 by ggerhold          #+#    #+#             */
-/*   Updated: 2019/05/12 02:08:10 by ggerhold         ###   ########.fr       */
+/*   Updated: 2019/05/12 02:22:21 by ggerhold         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,6 @@ void    ft_swap(t_list **lst)
         (*lst)->next->content = tmp;
     }
 }
-
-// Doesn't work for two elements (awkwardly)!
 
 void    ft_rotate(t_list **lst)
 {
