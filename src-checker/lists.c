@@ -6,7 +6,7 @@
 /*   By: ggerhold <ggerhold@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/10 19:28:03 by ggerhold          #+#    #+#             */
-/*   Updated: 2019/05/11 00:21:11 by ggerhold         ###   ########.fr       */
+/*   Updated: 2019/05/12 02:08:10 by ggerhold         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,6 @@ void    ft_rotate(t_list **lst)
     
     if (!(*lst) || !(*lst)->next)
 		return ;
-	if (!(*lst)->next->next)
-		ft_swap(lst);
     tail = (*lst);
 	while (tail->next->next)
 		tail = tail->next;
@@ -74,8 +72,6 @@ void    ft_reverse_rotate(t_list **lst)
     
     if (!(*lst) || !(*lst)->next)
         return ;
-    if (!(*lst)->next->next)
-		ft_swap(lst);
     tmp = (*lst)->content;
     cur = (*lst)->next;
     while (cur->next)

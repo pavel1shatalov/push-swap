@@ -6,7 +6,7 @@
 /*   By: ggerhold <ggerhold@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/09 19:33:49 by ggerhold          #+#    #+#             */
-/*   Updated: 2019/05/11 00:02:49 by ggerhold         ###   ########.fr       */
+/*   Updated: 2019/05/12 01:58:51 by ggerhold         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void    read_instructions(t_list **stack1, t_list **stack2)
     while (get_next_line(0, &command))
     {
         // stop command is just for debugging
-        if (!ft_strcmp("stop", command)) 
+        if (!ft_strcmp("q", command)) 
             return ;
 
         if (!ft_strcmp("sa", command))
