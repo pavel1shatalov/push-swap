@@ -6,7 +6,7 @@
 /*   By: ggerhold <ggerhold@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/09 19:33:49 by ggerhold          #+#    #+#             */
-/*   Updated: 2019/05/12 02:32:02 by ggerhold         ###   ########.fr       */
+/*   Updated: 2019/05/12 05:55:29 by ggerhold         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void    read_instructions(t_list **stack1, t_list **stack2)
             ft_reverse_rotate(stack2); // Done
         }
         else
-            ft_printf("incorrect command\n"); // has to be Error
+            ft_printf("incorrect command\n"); //- has to be Error
     }
 }
 
