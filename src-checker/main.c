@@ -6,7 +6,7 @@
 /*   By: ggerhold <ggerhold@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/09 19:33:49 by ggerhold          #+#    #+#             */
-/*   Updated: 2019/05/12 05:55:29 by ggerhold         ###   ########.fr       */
+/*   Updated: 2019/05/15 19:17:49 by ggerhold         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_list  *init_stack(int ac, char **av)
     int     tmp;
     t_list  *stack;
     t_list  *curr;
-    
+
     ind = 1;
     tmp = ft_atoi(av[ind++]);
     stack = ft_lstnew(&tmp, sizeof(int));
@@ -42,8 +42,8 @@ void    read_instructions(t_list **stack1, t_list **stack2)
 
     while (get_next_line(0, &command))
     {
-        // stop command is just for debugging
-        if (!ft_strcmp("q", command)) 
+        // quit command is just for debugging
+        if (!ft_strcmp("q", command))
             return ;
 
         if (!ft_strcmp("sa", command))
@@ -100,7 +100,7 @@ int     main(int ac, char **av)
 {
     t_list  *stack1;
     t_list  *stack2;
-    
+
     // Validation is missed
 
     // Initialization of stack below
@@ -113,7 +113,7 @@ int     main(int ac, char **av)
     stack2 = ft_lstnew(NULL, 0);
     ft_printf("_-_\n");
     ft_printl(stack2, 2);
-    
+
     // Reading the instructions
     read_instructions(&stack1, &stack2);
     ft_printl(stack1, 1);
