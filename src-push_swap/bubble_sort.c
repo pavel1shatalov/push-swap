@@ -6,7 +6,7 @@
 /*   By: ggerhold <ggerhold@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/12 04:05:31 by ggerhold          #+#    #+#             */
-/*   Updated: 2019/05/15 20:37:34 by ggerhold         ###   ########.fr       */
+/*   Updated: 2019/05/16 19:31:32 by ggerhold         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,5 +67,6 @@ void    bubble_sort(t_list **lst, size_t n)
 void    bubble_sort_alternative(t_list **lst, size_t n)
 {
     // it's easy to implement using two stacks
+    // but it doesn't make any sense to use bubble sort
     return ;
 }

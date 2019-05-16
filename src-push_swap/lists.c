@@ -6,7 +6,7 @@
 /*   By: ggerhold <ggerhold@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/10 19:28:03 by ggerhold          #+#    #+#             */
-/*   Updated: 2019/05/16 17:08:53 by ggerhold         ###   ########.fr       */
+/*   Updated: 2019/05/16 20:47:11 by ggerhold         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void    ft_swap(t_list **lst)
     }
 }
 
-void    ft_rotate(t_list **lst)
+void    ft_reverse_rotate(t_list **lst)
 {
     void    *tmp;
     t_list	*head;
@@ -61,7 +61,7 @@ void    ft_rotate(t_list **lst)
 	tail->next = NULL; // it becomes a problem unless you do it explicitly
 }
 
-void    ft_reverse_rotate(t_list **lst)
+void    ft_rotate(t_list **lst)
 {
     void    *tmp;
     t_list  *cur;

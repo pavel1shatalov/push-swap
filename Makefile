@@ -6,7 +6,7 @@
 #    By: ggerhold <ggerhold@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/09 18:04:07 by ggerhold          #+#    #+#              #
-#    Updated: 2019/05/16 18:33:11 by ggerhold         ###   ########.fr        #
+#    Updated: 2019/05/16 20:23:15 by ggerhold         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,8 @@ SRC_CHECKER		=	main.c \
 
 SRC_PUSH_SWAP	=	main.c \
 					lists.c \
-					median.c
+					median.c \
+                    quicksort.c
 
 OBJS_CHECKER = $(addprefix $(OBJ_DIR_CHECKER)/,$(SRC_CHECKER:%.c=%.o))
 OBJS_PUSH_SWAP = $(addprefix $(OBJ_DIR_PUSH_SWAP)/,$(SRC_PUSH_SWAP:%.c=%.o))

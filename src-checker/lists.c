@@ -6,7 +6,7 @@
 /*   By: ggerhold <ggerhold@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/10 19:28:03 by ggerhold          #+#    #+#             */
-/*   Updated: 2019/05/12 02:33:08 by ggerhold         ###   ########.fr       */
+/*   Updated: 2019/05/16 20:47:07 by ggerhold         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void    ft_printl(t_list *lst, char num)
 void    ft_swap(t_list **lst)
 {
     void    *tmp;
-    
+
     if (*lst && (*lst)->next)
     {
         tmp = (*lst)->content;
@@ -44,12 +44,12 @@ void    ft_swap(t_list **lst)
     }
 }
 
-void    ft_rotate(t_list **lst)
+void    ft_reverse_rotate(t_list **lst)
 {
     void    *tmp;
     t_list	*head;
 	t_list	*tail;
-    
+
     if (!(*lst) || !(*lst)->next)
 		return ;
     tail = (*lst);
@@ -63,11 +63,11 @@ void    ft_rotate(t_list **lst)
 	tail->next = NULL; // it becomes a problem unless you do it explicitly
 }
 
-void    ft_reverse_rotate(t_list **lst)
+void    ft_rotate(t_list **lst)
 {
     void    *tmp;
     t_list  *cur;
-    
+
     if (!(*lst) || !(*lst)->next)
         return ;
     tmp = (*lst)->content;
@@ -84,7 +84,7 @@ void	ft_push(t_list **dst, t_list **src)
 {
     void    *tmp;
     t_list	*head;
-	
+
 	if (!(*dst) || !(*src) || !((*src)->content))
 		return ;
     // it has to work even with !(*lst->content)
