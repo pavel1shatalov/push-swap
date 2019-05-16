@@ -6,7 +6,7 @@
 /*   By: ggerhold <ggerhold@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/09 19:35:42 by ggerhold          #+#    #+#             */
-/*   Updated: 2019/05/15 20:37:12 by ggerhold         ###   ########.fr       */
+/*   Updated: 2019/05/16 19:11:48 by ggerhold         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,10 @@ int     main(int ac, char **av)
 
     // I can swap only neighbours
     // thus, let's consider bubble sort first
-    bubble_sort(&stack1, ac - 1);
-    ft_printl(stack1, 1);
+    //  bubble_sort(&stack1, ac - 1);
+    //  ft_printl(stack1, 1);
+
+    // searching for a median
+    //  ft_printf("median of stack A is %d\n", median(stack1, ac - 1));
     return (0);
 }
