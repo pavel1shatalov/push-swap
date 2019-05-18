@@ -6,13 +6,13 @@
 /*   By: ggerhold <ggerhold@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/16 16:49:33 by ggerhold          #+#    #+#             */
-/*   Updated: 2019/05/16 18:49:36 by ggerhold         ###   ########.fr       */
+/*   Updated: 2019/05/18 19:37:42 by ggerhold         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int     *lstoar(t_list *lst, size_t n)
+int     *lstoar(t_lst *lst, size_t n)
 {
 	int		*A;
 	size_t	ind;
@@ -22,7 +22,7 @@ int     *lstoar(t_list *lst, size_t n)
 		return (NULL);
 	while (ind < n)
 	{
-		A[ind++] = *(int *)lst->content;
+		A[ind++] = lst->data;
         lst = lst->next;
 	}
     return A;
@@ -72,7 +72,7 @@ int     quickselect(int *A, int left, int right, int k)
         return (quickselect(A, p + 1, right, k));
 }
 
-int     median(t_list *lst, size_t n)
+int     median(t_lst *lst, size_t n)
 {
     int *A;
 
