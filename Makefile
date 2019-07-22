@@ -6,14 +6,14 @@
 #    By: ggerhold <ggerhold@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/09 18:04:07 by ggerhold          #+#    #+#              #
-#    Updated: 2019/05/18 22:12:30 by ggerhold         ###   ########.fr        #
+#    Updated: 2019/07/22 12:31:47 by ggerhold         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME_CHECKER = checker
 NAME_PUSH_SWAP = push_swap
 CC = gcc
-FLAGS = -Wall -Werror -Wextra
+FLAGS = -g -Wall -Werror -Wextra
 
 LIBFT_DIR = ./libft
 SRC_DIR_CHECKER = ./src-checker
@@ -22,16 +22,32 @@ INC_DIR = ./inc
 OBJ_DIR_CHECKER = ./obj-checker
 OBJ_DIR_PUSH_SWAP = ./obj-push_swap
 
-SRC_CHECKER		=   main.c \
-                    lsts.c \
-                    instructions.c
-
-SRC_PUSH_SWAP	=	main.c \
-					lsts.c \
+SRC_CHECKER		=   free.c \
                     instructions.c \
-					median.c \
-                    quicksort.c \
-                    is_sorted.c
+                    lsts.c \
+                    main.c \
+                    reader.c \
+                    tools.c \
+                    validation.c
+
+SRC_PUSH_SWAP	=   a_sort_commands.c \
+                    a_sort_vip.c \
+                    a_sort.c \
+                    b_sort_commands.c \
+                    b_sort_vip.c \
+                    b_sort.c \
+                    free.c \
+                    instructions.c \
+                    lsts.c \
+                    main.c \
+                    median.c \
+                    merge.c \
+                    partition.c \
+                    push_swap.c \
+                    reverse.c \
+                    sequence.c \
+                    tools.c \
+                    validation.c
 
 OBJS_CHECKER = $(addprefix $(OBJ_DIR_CHECKER)/,$(SRC_CHECKER:%.c=%.o))
 OBJS_PUSH_SWAP = $(addprefix $(OBJ_DIR_PUSH_SWAP)/,$(SRC_PUSH_SWAP:%.c=%.o))

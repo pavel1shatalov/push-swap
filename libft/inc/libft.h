@@ -6,7 +6,7 @@
 /*   By: ggerhold <ggerhold@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/04 18:57:01 by ggerhold          #+#    #+#             */
-/*   Updated: 2019/05/10 22:29:39 by ggerhold         ###   ########.fr       */
+/*   Updated: 2019/07/21 17:46:02 by ggerhold         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int					ft_isprint(int c);
 int					ft_toupper(int c);
 int					ft_tolower(int c);
 int					ft_atoi(const char *str);
+long long			ft_atol(const char *str);
 int					ft_strcmp(const char *s1, const char *s2);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
@@ -64,6 +65,7 @@ char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strtrim(char const *s);
 char				*ft_itoa(int n);
 char				**ft_strsplit(char const *s, char c);
+int					ft_splitlen(char **split);
 
 int					ft_putchar(char c);
 int					ft_putstr(char const *s);
@@ -110,6 +112,7 @@ char				*ft_chjoinstr(char c, char *str);
 char				*ft_strjoinnch(char *str, char c, int n);
 char				*ft_nchjoinstr(char *str, char c, int n);
 void				ft_memndel(void *ap, size_t n);
+char				*ft_join(int ac, char **av);
 
 # define BUFF_SIZE 32
 

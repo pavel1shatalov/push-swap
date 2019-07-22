@@ -6,77 +6,80 @@
 /*   By: ggerhold <ggerhold@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/16 16:49:33 by ggerhold          #+#    #+#             */
-/*   Updated: 2019/05/18 19:37:42 by ggerhold         ###   ########.fr       */
+/*   Updated: 2019/07/21 19:19:33 by ggerhold         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int     *lstoar(t_lst *lst, size_t n)
+static int		*lstoar(t_lst *lst, size_t n)
 {
-	int		*A;
+	int		*a;
 	size_t	ind;
 
 	ind = 0;
-	if (!(A = (int *)malloc(sizeof(int) * n)))
+	if (!(a = (int *)malloc(sizeof(int) * n)))
 		return (NULL);
 	while (ind < n)
 	{
-		A[ind++] = lst->data;
-        lst = lst->next;
+		a[ind++] = lst->data;
+		lst = lst->next;
 	}
-    return A;
+	return (a);
 }
 
-void    swap(int *a, int *b)
+static void		swap(int *a, int *b)
 {
-    int t;
+	int t;
 
-    t = *a;
-    *a = *b;
-    *b = t;
+	t = *a;
+	*a = *b;
+	*b = t;
 }
 
-int     partition(int *A, int left, int right)
+static int		partition(int *a, int left, int right)
 {
-    int pivot;
-    int i;
-    int x;
+	int pivot;
+	int i;
+	int x;
 
-    pivot = A[right];
-    i = left;
-    x = i;
-    while (x < right)
-    {
-        if (A[x] <= pivot)
-        {
-            swap(&A[i], &A[x]);
-            i++;
-        }
-        x++;
-    }
-    swap(&A[i], &A[right]);
-    return (i);
+	pivot = a[right];
+	i = left;
+	x = i;
+	while (x < right)
+	{
+		if (a[x] <= pivot)
+		{
+			swap(&a[i], &a[x]);
+			i++;
+		}
+		x++;
+	}
+	swap(&a[i], &a[right]);
+	return (i);
 }
 
-int     quickselect(int *A, int left, int right, int k)
+static int		quickselect(int *a, int left, int right, int k)
 {
-    int p;
+	int p;
 
-    p = partition(A, left, right);
-    if (k - 1 == p)
-        return A[p];
-    else if (k - 1 < p)
-        return (quickselect(A, left, p - 1, k));
-    else
-        return (quickselect(A, p + 1, right, k));
+	p = partition(a, left, right);
+	if (k - 1 == p)
+		return (a[p]);
+	else if (k - 1 < p)
+		return (quickselect(a, left, p - 1, k));
+	else
+		return (quickselect(a, p + 1, right, k));
 }
 
-int     median(t_lst *lst, size_t n)
+int				median(t_lst *lst, size_t n)
 {
-    int *A;
+	int *a;
+	int med;
 
-    A = lstoar(lst, n);
-    return (quickselect(A, 0, n - 1, n / 2)); // I basically don't care and take the smaller one
-    free(A);
+	if (!(a = lstoar(lst, n)))
+		exit(1);
+	med = quickselect(a, 0, n - 1, n / 2 + n % 2);
+	free(a);
+	return (med);
 }

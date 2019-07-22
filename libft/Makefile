@@ -6,7 +6,7 @@
 #    By: ggerhold <ggerhold@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/02 15:48:04 by ggerhold          #+#    #+#              #
-#    Updated: 2019/05/10 22:30:09 by ggerhold         ###   ########.fr        #
+#    Updated: 2019/07/21 17:45:51 by ggerhold         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,6 +32,7 @@ SRC_LIBFT	=	ft_strlen.c \
 				ft_toupper.c \
 				ft_tolower.c \
 				ft_atoi.c \
+                ft_atol.c \
 				ft_strcmp.c \
 				ft_strncmp.c \
 				ft_memcmp.c \
@@ -67,6 +68,7 @@ SRC_LIBFT	=	ft_strlen.c \
 				ft_strtrim.c \
 				ft_itoa.c \
 				ft_strsplit.c \
+                ft_splitlen.c \
 				ft_putchar.c \
 				ft_putstr.c \
 				ft_putendl.c \
@@ -102,7 +104,8 @@ SRC_LIBFT	=	ft_strlen.c \
 				ft_chjoinstr.c \
 				ft_strjoinnch.c \
 				ft_nchjoinstr.c \
-				ft_memndel.c
+				ft_memndel.c \
+                ft_join.c
 
 SRC_FT_PRINTF = ft_printf.c \
 				token_processing.c \

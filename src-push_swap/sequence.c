@@ -1,61 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lsts.c                                             :+:      :+:    :+:   */
+/*   sequence.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggerhold <ggerhold@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/18 15:25:14 by ggerhold          #+#    #+#             */
-/*   Updated: 2019/07/21 16:00:07 by ggerhold         ###   ########.fr       */
+/*   Created: 2019/07/21 14:29:03 by ggerhold          #+#    #+#             */
+/*   Updated: 2019/07/21 16:02:14 by ggerhold         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_lst	*ft_newlst(int n)
+static t_swap	*ft_newcommand(char *str)
 {
-	t_lst	*lst;
+	t_swap	*s;
 
-	if (!(lst = (t_lst *)malloc(sizeof(t_lst))))
+	if (!(s = (t_swap *)malloc(sizeof(t_swap))))
 		exit(1);
-	lst->data = n;
-	lst->next = NULL;
-	return (lst);
+	if (!(s->command = ft_strnew(ft_strlen(str))))
+		exit(1);
+	s->command = ft_strcpy(s->command, str);
+	s->next = NULL;
+	return (s);
 }
 
-void	ft_pushfront(t_lst **lst, int n)
+void			ft_pushback_command(t_push *p, char *str)
 {
-	t_lst	*new;
+	t_swap	**s;
+	t_swap	*cur;
 
-	new = ft_newlst(n);
-	new->next = *lst;
-	*lst = new;
-}
-
-void	ft_pushback(t_lst **lst, int n)
-{
-	t_lst	*cur;
-
-	if (!lst)
+	if (!p)
 		return ;
-	if (*lst)
+	s = &p->sequence;
+	if (*s)
 	{
-		cur = *lst;
+		cur = *s;
 		while (cur->next)
 			cur = cur->next;
-		cur->next = ft_newlst(n);
+		cur->next = ft_newcommand(str);
 	}
 	else
-		*lst = ft_newlst(n);
-}
-
-void	ft_popfront(t_lst **lst)
-{
-	t_lst	*cur;
-
-	if (!(*lst))
-		return ;
-	cur = (*lst)->next;
-	free(*lst);
-	*lst = cur;
+		*s = ft_newcommand(str);
 }

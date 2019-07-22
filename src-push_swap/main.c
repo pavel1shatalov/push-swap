@@ -6,26 +6,40 @@
 /*   By: ggerhold <ggerhold@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/18 16:40:14 by ggerhold          #+#    #+#             */
-/*   Updated: 2019/05/18 23:40:10 by ggerhold         ###   ########.fr       */
+/*   Updated: 2019/07/21 19:19:48 by ggerhold         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
- #include "push_swap.h"
+#include "push_swap.h"
 
-int main(int ac, char **av)
+static void	magic(t_push *p)
+{
+	a_partition(p);
+	a_sort(p);
+	b_partition(p);
+	b_sort(p);
+}
+
+int			main(int ac, char **av)
 {
 	t_push	*p;
+	char	*join;
+	char	**av_mod;
+	int		ac_mod;
 
-	p = init(ac, av);
-	ft_printl(p);
-	while (42)
-	{
-		a_partition(p);
-		a_sort_basic(p);
-		b_partition(p);
-		b_sort_basic(p);
-		if (is_sorted(*p->stack1) && p->s1 == (size_t)ac - 1)
-			break;
-	}
-	ft_printl(p);
+	join = ft_join(ac, av);
+	av_mod = ft_strsplit(join, ' ');
+	if (!(join) || !(av_mod))
+		return (1);
+	ac_mod = ft_splitlen(av_mod);
+	if (error(ac_mod, av_mod, join))
+		return (1);
+	if (!(p = init(ac_mod, av_mod)))
+		return (1);
+	while (!(is_sorted(p->stack1, ac_mod - 1)))
+		magic(p);
+	merge(p);
+	ft_print_sequence(p->sequence);
+	free_all(p, av_mod, join);
+	return (0);
 }

@@ -1,22 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.h                                          :+:      :+:    :+:   */
+/*   a_sort_commands.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggerhold <ggerhold@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/09 19:37:26 by ggerhold          #+#    #+#             */
-/*   Updated: 2019/07/21 18:06:13 by ggerhold         ###   ########.fr       */
+/*   Created: 2019/05/18 22:06:46 by ggerhold          #+#    #+#             */
+/*   Updated: 2019/07/22 12:20:30 by ggerhold         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHECKER_H
-# define CHECKER_H
+#include "push_swap.h"
 
-# include "../libft/inc/libft.h"
-# include "../libft/inc/ft_printf.h"
-# include "push_swap.h"
+void	a3sort_slm(t_push *p)
+{
+	ft_ra(p);
+	ft_sa(p);
+	ft_rra(p);
+}
 
-int	read_instructions(t_push *p, char **av, char *join);
+void	a3sort_mls(t_push *p)
+{
+	ft_ra(p);
+	ft_sa(p);
+	ft_rra(p);
+	ft_sa(p);
+}
 
-#endif
+void	a3sort_msl(t_push *p)
+{
+	ft_sa(p);
+}
+
+void	a3sort_lsm(t_push *p)
+{
+	ft_sa(p);
+	ft_ra(p);
+	ft_sa(p);
+	ft_rra(p);
+}
+
+void	a3sort_lms(t_push *p)
+{
+	ft_sa(p);
+	ft_ra(p);
+	ft_sa(p);
+	ft_rra(p);
+	ft_sa(p);
+}

@@ -6,7 +6,7 @@
 /*   By: ggerhold <ggerhold@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/18 18:26:49 by ggerhold          #+#    #+#             */
-/*   Updated: 2019/05/18 22:26:41 by ggerhold         ###   ########.fr       */
+/*   Updated: 2019/07/20 19:35:13 by ggerhold         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,15 +42,19 @@ void	ft_rotate(t_lst **stack)
 void	ft_reverse_rotate(t_lst **stack)
 {
 	t_lst	*cur;
-	int 	tmp;
+	t_lst	*tmp;
+	int		n;
 
 	if (!(*stack) || !(*stack)->next)
 		return ;
 	cur = *stack;
-	while (cur->next)
+	while (cur->next->next)
 		cur = cur->next;
-	tmp = cur->data;
-	ft_pushfront(stack, tmp);
+	n = cur->next->data;
+	tmp = cur->next;
+	cur->next = NULL;
+	free(tmp);
+	ft_pushfront(stack, n);
 }
 
 void	ft_push(t_lst **dst, t_lst **src)
