@@ -6,7 +6,7 @@
 /*   By: ggerhold <ggerhold@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/18 21:00:54 by ggerhold          #+#    #+#             */
-/*   Updated: 2019/07/21 18:07:03 by ggerhold         ###   ########.fr       */
+/*   Updated: 2019/07/22 15:05:23 by ggerhold         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,12 @@ int			read_instructions(t_push *p, char **av, char *join)
 		if (!(read_push_swap(p, command)) && !(read_rotate(p, command)))
 		{
 			write(1, "Error\n", 6);
+			ft_strdel(&command);
 			free_all(p, av, join);
 			return (1);
 		}
+		else
+			ft_strdel(&command);
+	ft_strdel(&command);
 	return (0);
 }
